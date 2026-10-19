@@ -1,7 +1,10 @@
 import { Elysia } from "elysia";
+import Router from "./Routes/index";
+import openapi from "@elysia/openapi";
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
+new Elysia()
+  .use(openapi())
+  .use(Router)
+  .listen(3000);
 
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
+console.log("🚀 http://localhost:3000");

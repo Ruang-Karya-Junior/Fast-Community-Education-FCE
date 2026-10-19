@@ -3,13 +3,19 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "migrate": "bunx drizzle-kit push"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysia/jwt": "^1.4.2",
+    "@elysia/openapi": "^1.4.16",
+    "drizzle-orm": "^0.45.4",
+    "elysia": "latest",
+    "postgres": "^3.4.9"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "drizzle-kit": "^0.31.11"
   },
   "module": "src/index.js"
 }
